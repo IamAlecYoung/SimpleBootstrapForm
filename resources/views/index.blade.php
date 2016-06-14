@@ -14,7 +14,7 @@
             </div>
 
             <div class="form-group col-sm-4">
-                <br />
+                <br /><br>
                 <button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Submit</button>
             </div>
           </div>
@@ -25,29 +25,27 @@
 
           <div class="row">
 
-              <div class="form-group col-sm-12 awhing">
-                  <h3 class="col-sm-10">Milk</h3>
-                  <div class="col-sm-1">
-                    <button class="btn btn-success pull-right" title="I have got this item">&#10004;</button>
-                  </div>
-                  <div class="col-sm-1">
-                    <button class="btn btn-danger pull-right" title="I no longer want this item">&#10006;</button>
-                  </div>
-              </div>
+            <?php //$items = ["hi", "hello", "Whatup"]; ?>
 
-              <div class="form-group col-sm-12 awhing">
-                  <h3 class="col-sm-10">Bread</h3>
-                  <div class="col-sm-1">
-                    <button class="btn btn-success pull-right" title="I have got this item">&#10004;</button>
-                  </div>
-                  <div class="col-sm-1">
-                    <button class="btn btn-danger pull-right" title="I no longer want this item">&#10006;</button>
-                  </div>
-              </div>
+            @if (isset($items))
 
-              <div class="form-group col-sm-12">
-                  <h3>Bread</h3>
-              </div>
+                  @foreach ($items as $itemonList)
+
+                  <div class="form-group col-sm-12 awhing">
+                      <h3 class="col-sm-10"> {{ $itemonList }} </h3>
+                      <div class="col-sm-1">
+                        <button class="btn btn-success pull-right" title="I have got this item">&#10004;</button>
+                      </div>
+                      <div class="col-sm-1">
+                        <button class="btn btn-danger pull-right" title="I no longer want this item">&#10006;</button>
+                      </div>
+                  </div>
+
+                  @endforeach
+
+            @else
+                <h3 style="text-align: center">Nothing on your list.</h3>
+            @endif
 
           </div>
 
